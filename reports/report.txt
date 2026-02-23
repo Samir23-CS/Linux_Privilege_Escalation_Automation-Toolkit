@@ -1,0 +1,53 @@
+============================================================
+ Linux Privilege Escalation Automation Toolkit Report
+ Detection-Only | Security Auditing Framework
+ Generated At: 2026-02-21 18:51:34.068232
+============================================================
+
+[LOW] Security Finding (Risk Score: 2)
+Issue      : Current User
+Details    : User: kali (UID: 1000)
+Mitigation : Ensure least privilege access is enforced.
+--------------------------------------------------
+[LOW] Security Finding (Risk Score: 2)
+Issue      : Group Membership
+Details    : Groups: adm, dialout, cdrom, floppy, sudo, audio, dip, video, plugdev, users, netdev, scanner, bluetooth, lpadmin, wireshark, vboxsf, kaboxer, kali
+Mitigation : Review sensitive group memberships (sudo, docker, etc).
+--------------------------------------------------
+[LOW] Security Finding (Risk Score: 2)
+Issue      : Root Privilege Check
+Details    : User is NOT root.
+Mitigation : Run scans as non-root for realistic privilege escalation testing.
+--------------------------------------------------
+[LOW] Security Finding (Risk Score: 2)
+Issue      : System Information
+Details    : Hostname: kali | OS: Linux-6.18.9+kali-amd64-x86_64-with-glibc2.42 | Kernel: 6.18.9+kali-amd64 | Arch: x86_64
+Mitigation : Ensure OS and kernel are regularly patched.
+--------------------------------------------------
+[LOW] Security Finding (Risk Score: 2)
+Issue      : Sudo Configuration
+Details    : No obvious NOPASSWD entries detected.
+Mitigation : Periodically audit sudo privileges.
+--------------------------------------------------
+[CRITICAL] SUID/SGID Binary (Risk Score: 9)
+Issue      : Suspicious SUID/SGID Binary Location
+Details    : /home/kali/test_suid detected outside standard system paths.
+Mitigation : Investigate origin and remove SUID/SGID bit if unauthorized.
+--------------------------------------------------
+[LOW] SUID/SGID Binary (Risk Score: 2)
+Issue      : Default System SUID/SGID Binaries Detected
+Details    : 40 standard system SUID/SGID binaries found.
+Mitigation : Review only if system integrity is questionable.
+--------------------------------------------------
+[LOW] Security Finding (Risk Score: 2)
+Issue      : Kernel Version Check
+Details    : Kernel version: 6.18.9+kali-amd64
+Mitigation : Continue regular patching and monitor security advisories.
+--------------------------------------------------
+
+================ SCAN SUMMARY ================
+CRITICAL : 1
+HIGH     : 0
+MEDIUM   : 0
+LOW      : 7
+================================================
